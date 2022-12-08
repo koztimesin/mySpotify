@@ -3,27 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8129422826006683B3 /* AppDelegate.swift */; };
 		FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8329422826006683B3 /* SceneDelegate.swift */; };
-		FA58FE8629422826006683B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8529422826006683B3 /* ViewController.swift */; };
-		FA58FE8929422826006683B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58FE8729422826006683B3 /* Main.storyboard */; };
+		FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8529422826006683B3 /* HomeViewController.swift */; };
 		FA58FE8B2942282B006683B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA58FE8A2942282B006683B3 /* Assets.xcassets */; };
 		FA58FE8E2942282B006683B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */; };
+		FA58FE9C29422EA4006683B3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE9B29422EA4006683B3 /* TabBarController.swift */; };
+		FA58FE9E29422F31006683B3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE9D29422F31006683B3 /* SearchViewController.swift */; };
+		FA58FEA029422F5A006683B3 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE9F29422F5A006683B3 /* LibraryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA58FE7E29422826006683B3 /* mySpotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySpotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58FE8129422826006683B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA58FE8329422826006683B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA58FE8529422826006683B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA58FE8829422826006683B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA58FE8529422826006683B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA58FE8A2942282B006683B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA58FE8D2942282B006683B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA58FE8F2942282B006683B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA58FE9B29422EA4006683B3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FA58FE9D29422F31006683B3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA58FE9F29422F5A006683B3 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		FA58FE8029422826006683B3 /* mySpotify */ = {
 			isa = PBXGroup;
 			children = (
-				FA58FE8129422826006683B3 /* AppDelegate.swift */,
-				FA58FE8329422826006683B3 /* SceneDelegate.swift */,
-				FA58FE8529422826006683B3 /* ViewController.swift */,
-				FA58FE8729422826006683B3 /* Main.storyboard */,
-				FA58FE8A2942282B006683B3 /* Assets.xcassets */,
-				FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */,
+				FA58FE9A29422A75006683B3 /* Managers */,
+				FA58FE9929422A67006683B3 /* ViewModels */,
+				FA58FE9829422A5C006683B3 /* Models */,
+				FA58FE9729422A4D006683B3 /* Resources */,
+				FA58FE9629422A45006683B3 /* Views */,
+				FA58FE9529422A3C006683B3 /* Controllers */,
 				FA58FE8F2942282B006683B3 /* Info.plist */,
 			);
 			path = mySpotify;
+			sourceTree = "<group>";
+		};
+		FA58FE9529422A3C006683B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA58FE8529422826006683B3 /* HomeViewController.swift */,
+				FA58FE9B29422EA4006683B3 /* TabBarController.swift */,
+				FA58FE9D29422F31006683B3 /* SearchViewController.swift */,
+				FA58FE9F29422F5A006683B3 /* LibraryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA58FE9629422A45006683B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA58FE9729422A4D006683B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA58FE8129422826006683B3 /* AppDelegate.swift */,
+				FA58FE8329422826006683B3 /* SceneDelegate.swift */,
+				FA58FE8A2942282B006683B3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA58FE9829422A5C006683B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA58FE9929422A67006683B3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FA58FE9A29422A75006683B3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +157,7 @@
 				};
 			};
 			buildConfigurationList = FA58FE7929422826006683B3 /* Build configuration list for PBXProject "mySpotify" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -127,7 +181,6 @@
 			files = (
 				FA58FE8E2942282B006683B3 /* LaunchScreen.storyboard in Resources */,
 				FA58FE8B2942282B006683B3 /* Assets.xcassets in Resources */,
-				FA58FE8929422826006683B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA58FE8629422826006683B3 /* ViewController.swift in Sources */,
+				FA58FE9E29422F31006683B3 /* SearchViewController.swift in Sources */,
+				FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */,
+				FA58FE9C29422EA4006683B3 /* TabBarController.swift in Sources */,
 				FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */,
+				FA58FEA029422F5A006683B3 /* LibraryViewController.swift in Sources */,
 				FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +203,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA58FE8729422826006683B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA58FE8829422826006683B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,9 +339,9 @@
 				INFOPLIST_FILE = mySpotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,9 +349,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = koztimesin.mySpotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,9 +369,9 @@
 				INFOPLIST_FILE = mySpotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +379,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = koztimesin.mySpotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
