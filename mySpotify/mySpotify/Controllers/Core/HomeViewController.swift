@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "mySpotify"
-        view.backgroundColor = .magenta
+        title = "Home"
+        view.backgroundColor = .systemBackground
     }
 
 
