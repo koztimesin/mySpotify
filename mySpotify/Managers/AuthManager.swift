@@ -19,6 +19,15 @@ final class AuthManager {
         
     }
     
+    public var signInURL: URL? {
+        let base = "https://accounts.spotify.com/authorize"
+        let scope = "user-read-private"
+        let redirectURI = "https://github.com/koztimesin"
+        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(scope)&redirect_uri=\(redirectURI)&show_dialog=TRUE"
+        
+        return URL(string: string)
+    }
+    
     var isSignedIn: Bool {
         false
     }
@@ -37,5 +46,17 @@ final class AuthManager {
     
     private var shouldRefreshToken: Bool {
         false
+    }
+    
+    public func exchangeCodeForToken(code: String, completion: @escaping ((Bool) -> Void)) {
+        
+    }
+    
+    public func refreshAccessToken() {
+        
+    }
+    
+    private func cacheToken() {
+        
     }
 }

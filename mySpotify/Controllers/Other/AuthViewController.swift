@@ -19,6 +19,8 @@ class AuthViewController: UIViewController {
         
         return webView
     }()
+    
+    public var completionHandler: ((Bool) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class AuthViewController: UIViewController {
         view.backgroundColor = .systemBackground
         webView.navigationDelegate = self
         view.addSubview(webView)
+        guard let url = AuthManager.shared.signInURL else { return }
+        webView.load(URLRequest(url: url))
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,5 +41,11 @@ class AuthViewController: UIViewController {
 }
 
 extension AuthViewController: WKNavigationDelegate {
-    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        guard let url = webView.url else { return }
+        let component = URLComponents(string: url.absoluteString)
+        guard let code = component?.queryItems?.first(where: { $0.name == "code" })?.value else { return }
+        
+        print(code)
+    }
 }
