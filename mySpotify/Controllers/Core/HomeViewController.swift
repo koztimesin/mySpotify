@@ -14,8 +14,15 @@ class HomeViewController: UIViewController {
         
         title = "Home"
         view.backgroundColor = .systemBackground
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .done, target: self, action: #selector(didTapProfile))
     }
 
-
+    @objc func didTapProfile() {
+        let vc = ProfileViewController()
+        vc.title = "Profile"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
