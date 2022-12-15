@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage
+import SnapKit
 
 class ProfileViewController: UIViewController {
     
@@ -53,8 +55,29 @@ class ProfileViewController: UIViewController {
         models.append("Email address: \(model.email)")
         models.append("ID: \(model.id)")
         models.append("Plan: \(model.product)")
+        models.append("Image: \(model.images.count)")
+        createTableHeader(with: model.images.first?.url)
+//        createTableHeader(with: "https://img.freepik.com/free-vector/dog-with-drawn-suit_79603-538.jpg")
         
         tableView.reloadData()
+    }
+    
+    private func createTableHeader(with string: String?) {
+        guard let urlString = string, let url = URL(string: urlString) else { return }
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: Int(view.frame.width), height: Int(view.frame.width / 1.5)))
+        
+        let imageSize: CGFloat = headerView.frame.height / 2
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imageSize, height: imageSize))
+        
+        headerView.addSubview(imageView)
+        imageView.center = headerView.center
+        imageView.contentMode = .scaleAspectFit
+        imageView.sd_setImage(with: url)
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = imageSize / 2
+        
+        tableView.tableHeaderView = headerView
     }
     
     private func failedToGetProfile() {

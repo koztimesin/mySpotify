@@ -7,4 +7,7 @@ target 'mySpotify' do
 
   # Pods for mySpotify
     pod 'SnapKit', '~> 5.6.0'
+    pod 'SDWebImage'
+    pod 'Appirater'
+    pod 'Firebase/Analytics'
 end
