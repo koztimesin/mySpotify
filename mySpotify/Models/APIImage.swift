@@ -1,5 +1,5 @@
 //
-//  UserImage.swift
+//  APIImage.swift
 //  mySpotify
 //
 //  Created by koztimesin on 17.12.2022.

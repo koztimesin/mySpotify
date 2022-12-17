@@ -34,6 +34,7 @@
 		FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */; };
 		FABDE063294DED50003A09D9 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */; };
 		FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE064294DEE30003A09D9 /* APIImage.swift */; };
+		FABDE067294DF305003A09D9 /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
 		FABDE064294DEE30003A09D9 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
+		FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */,
 				FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */,
 				FABDE064294DEE30003A09D9 /* APIImage.swift */,
+				FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA58FE9E29422F31006683B3 /* SearchViewController.swift in Sources */,
+				FABDE067294DF305003A09D9 /* FeaturedPlaylistsResponse.swift in Sources */,
 				FA58FEB929423240006683B3 /* Playlist.swift in Sources */,
 				FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */,
 				FA58FEB3294231F3006683B3 /* AuthManager.swift in Sources */,
