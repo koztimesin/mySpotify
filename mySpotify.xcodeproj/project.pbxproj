@@ -36,6 +36,7 @@
 		FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE064294DEE30003A09D9 /* APIImage.swift */; };
 		FABDE067294DF305003A09D9 /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */; };
 		FABDE069294DFAB2003A09D9 /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE068294DFAB2003A09D9 /* RecommendedGenresResponse.swift */; };
+		FABDE06B294E2233003A09D9 /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06A294E2233003A09D9 /* RecommendationsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		FABDE064294DEE30003A09D9 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 		FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 		FABDE068294DFAB2003A09D9 /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
+		FABDE06A294E2233003A09D9 /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				FABDE064294DEE30003A09D9 /* APIImage.swift */,
 				FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */,
 				FABDE068294DFAB2003A09D9 /* RecommendedGenresResponse.swift */,
+				FABDE06A294E2233003A09D9 /* RecommendationsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				FA58FEBD2942327C006683B3 /* UserProfile.swift in Sources */,
 				FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */,
 				FA58FEAD29423181006683B3 /* PlayerViewController.swift in Sources */,
+				FABDE06B294E2233003A09D9 /* RecommendationsResponse.swift in Sources */,
 				FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */,
 				FA58FEB529423202006683B3 /* APICaller.swift in Sources */,
 				FABDE063294DED50003A09D9 /* NewReleasesResponse.swift in Sources */,
