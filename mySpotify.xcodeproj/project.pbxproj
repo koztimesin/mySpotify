@@ -32,6 +32,8 @@
 		FA58FEBF2942329E006683B3 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FEBE2942329E006683B3 /* AudioTrack.swift */; };
 		FABDE045294376D0003A09D9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE044294376D0003A09D9 /* AuthResponse.swift */; };
 		FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */; };
+		FABDE063294DED50003A09D9 /* NewReleasesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */; };
+		FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE064294DEE30003A09D9 /* APIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		FA58FEBE2942329E006683B3 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		FABDE044294376D0003A09D9 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesResponse.swift; sourceTree = "<group>"; };
+		FABDE064294DEE30003A09D9 /* APIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				FA58FEBE2942329E006683B3 /* AudioTrack.swift */,
 				FABDE044294376D0003A09D9 /* AuthResponse.swift */,
 				FABDE05C2947A9FD003A09D9 /* SettingsModel.swift */,
+				FABDE062294DED50003A09D9 /* NewReleasesResponse.swift */,
+				FABDE064294DEE30003A09D9 /* APIImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,7 +349,9 @@
 				FA58FEBD2942327C006683B3 /* UserProfile.swift in Sources */,
 				FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */,
 				FA58FEAD29423181006683B3 /* PlayerViewController.swift in Sources */,
+				FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */,
 				FA58FEB529423202006683B3 /* APICaller.swift in Sources */,
+				FABDE063294DED50003A09D9 /* NewReleasesResponse.swift in Sources */,
 				FA58FEA929423149006683B3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
