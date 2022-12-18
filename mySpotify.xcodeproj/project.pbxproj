@@ -37,6 +37,9 @@
 		FABDE067294DF305003A09D9 /* FeaturedPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */; };
 		FABDE069294DFAB2003A09D9 /* RecommendedGenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE068294DFAB2003A09D9 /* RecommendedGenresResponse.swift */; };
 		FABDE06B294E2233003A09D9 /* RecommendationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06A294E2233003A09D9 /* RecommendationsResponse.swift */; };
+		FABDE06E294F6867003A09D9 /* NewReleasesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06D294F6867003A09D9 /* NewReleasesCollectionViewCell.swift */; };
+		FABDE070294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06F294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift */; };
+		FABDE072294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE071294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		FABDE066294DF305003A09D9 /* FeaturedPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsResponse.swift; sourceTree = "<group>"; };
 		FABDE068294DFAB2003A09D9 /* RecommendedGenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedGenresResponse.swift; sourceTree = "<group>"; };
 		FABDE06A294E2233003A09D9 /* RecommendationsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsResponse.swift; sourceTree = "<group>"; };
+		FABDE06D294F6867003A09D9 /* NewReleasesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABDE06F294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABDE071294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 		FA58FE9629422A45006683B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FABDE06C294F682C003A09D9 /* Browse */,
 				FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
@@ -222,6 +229,16 @@
 				FA58FEB0294231B4006683B3 /* SearchResultsViewController.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		FABDE06C294F682C003A09D9 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				FABDE06D294F6867003A09D9 /* NewReleasesCollectionViewCell.swift */,
+				FABDE06F294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift */,
+				FABDE071294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift */,
+			);
+			path = Browse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +368,7 @@
 				FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */,
 				FA58FEB72942321B006683B3 /* HapticsManager.swift in Sources */,
 				FA58FE9C29422EA4006683B3 /* TabBarController.swift in Sources */,
+				FABDE070294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift in Sources */,
 				FA58FEA4294230FC006683B3 /* AuthViewController.swift in Sources */,
 				FABDE069294DFAB2003A09D9 /* RecommendedGenresResponse.swift in Sources */,
 				FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */,
@@ -361,9 +379,11 @@
 				FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */,
 				FA58FEAD29423181006683B3 /* PlayerViewController.swift in Sources */,
 				FABDE06B294E2233003A09D9 /* RecommendationsResponse.swift in Sources */,
+				FABDE06E294F6867003A09D9 /* NewReleasesCollectionViewCell.swift in Sources */,
 				FABDE065294DEE30003A09D9 /* APIImage.swift in Sources */,
 				FA58FEB529423202006683B3 /* APICaller.swift in Sources */,
 				FABDE063294DED50003A09D9 /* NewReleasesResponse.swift in Sources */,
+				FABDE072294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift in Sources */,
 				FA58FEA929423149006683B3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
