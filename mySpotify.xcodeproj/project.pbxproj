@@ -40,6 +40,7 @@
 		FABDE06E294F6867003A09D9 /* NewReleasesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06D294F6867003A09D9 /* NewReleasesCollectionViewCell.swift */; };
 		FABDE070294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE06F294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift */; };
 		FABDE072294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE071294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift */; };
+		FABDE08729509E5D003A09D9 /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08629509E5D003A09D9 /* NewReleasesCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		FABDE06D294F6867003A09D9 /* NewReleasesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FABDE06F294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FABDE071294F6909003A09D9 /* RecommendedTracksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCollectionViewCell.swift; sourceTree = "<group>"; };
+		FABDE08629509E5D003A09D9 /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		FA58FE9929422A67006683B3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FABDE08629509E5D003A09D9 /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				FABDE045294376D0003A09D9 /* AuthResponse.swift in Sources */,
 				FA58FEA72942313E006683B3 /* WelcomeViewController.swift in Sources */,
 				FA58FEAB2942315F006683B3 /* ProfileViewController.swift in Sources */,
+				FABDE08729509E5D003A09D9 /* NewReleasesCellViewModel.swift in Sources */,
 				FA58FEBF2942329E006683B3 /* AudioTrack.swift in Sources */,
 				FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */,
 				FA58FEB72942321B006683B3 /* HapticsManager.swift in Sources */,
