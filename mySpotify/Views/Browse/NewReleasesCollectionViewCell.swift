@@ -22,7 +22,7 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
     
     private lazy var albumNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
         label.numberOfLines = 0
         
         return label
@@ -30,7 +30,7 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
     
     private lazy var numberOfTracksLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
         
         return label
@@ -38,7 +38,7 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
     
     private lazy var artistNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.numberOfLines = 0
         
         return label
@@ -61,8 +61,27 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         artistNameLabel.sizeToFit()
         numberOfTracksLabel.sizeToFit()
         
-        let imageSize: CGFloat = contentView.frame.height - 10
-        albumCoverImageView.frame = CGRect(x: 5, y: 5, width: imageSize, height: imageSize)
+        albumCoverImageView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.height.width.equalToSuperview().dividedBy(3)
+            make.centerY.equalToSuperview()
+        }
+        
+        numberOfTracksLabel.snp.makeConstraints { make in
+            make.leading.equalTo(albumCoverImageView).offset(130)
+            make.bottom.equalToSuperview().inset(10)
+        }
+        
+        albumNameLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(5)
+            make.leading.equalTo(albumCoverImageView).inset(130)
+        }
+        
+        artistNameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(albumCoverImageView).inset(130)
+            make.top.equalTo(albumNameLabel.snp.bottom).offset(10)
+        }
     }
     
     override func prepareForReuse() {
@@ -88,5 +107,7 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(albumNameLabel)
         contentView.addSubview(numberOfTracksLabel)
         contentView.addSubview(artistNameLabel)
+        
+        contentView.clipsToBounds = true
     }
 }
