@@ -15,6 +15,10 @@ private enum BrowseSectionType {
 
 class HomeViewController: UIViewController {
     
+    private var newReleases = [Album]()
+    private var featuredPlaylists = [Playlist]()
+    private var recommendedTracks = [AudioTrack]()
+    
     private var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout { sectionIndex, _ in
         return createSectionLayout(section: sectionIndex)
     })
@@ -201,6 +205,10 @@ class HomeViewController: UIViewController {
     
     
     private func configureModels(releases: [Album], playlists: [Playlist], tracks: [AudioTrack]) {
+        self.newReleases = releases
+        self.featuredPlaylists = playlists
+        self.recommendedTracks = tracks
+        
         // Configure Models
         sections.append(.newReleases(viewModels: releases.compactMap({
             NewReleasesCellViewModel(name: $0.name,
@@ -218,7 +226,7 @@ class HomeViewController: UIViewController {
         sections.append(.recommendedTracks(viewModels: tracks.compactMap({
             RecommendedTracksCellViewModel(name: $0.name,
                                            artistName: $0.artists.first?.name ?? "-",
-                                           artworkURL: URL(string: $0.album.images.first?.url ?? ""))
+                                           artworkURL: URL(string: $0.album?.images.first?.url ?? ""))
         })))
         
         collectionView.reloadData()
@@ -282,6 +290,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = sections[indexPath.section]
+        
+        switch section {
+            
+        case .newReleases:
+            let album = newReleases[indexPath.row]
+            let vc = NewReleasesViewController(album: album)
+            vc.title = album.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .featuredPlaylists:
+            let playlist = featuredPlaylists[indexPath.row]
+            let vc = PlaylistViewController(playlist: playlist)
+            vc.title = playlist.name
+            vc.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .recommendedTracks:
+            break
+            
+        }
     }
     
 }
