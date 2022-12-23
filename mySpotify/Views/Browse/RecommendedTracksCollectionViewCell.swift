@@ -12,8 +12,6 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
     
     private lazy var trackCoverImageView: UIImageView = {
         let image = UIImageView()
-        image.layer.masksToBounds = true
-        image.layer.cornerRadius = 8
         image.image = UIImage(systemName: "photo")
         image.contentMode = .scaleAspectFill
         
@@ -56,18 +54,17 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
         
         trackCoverImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.height.equalToSuperview()
-            make.width.equalToSuperview().dividedBy(5)
+            make.height.width.equalTo(contentView.snp.height).offset(5)
         }
         
         trackNameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(5)
             make.leading.equalTo(trackCoverImageView.snp.trailing).offset(10)
         }
         
         artistNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(trackCoverImageView.snp.trailing).offset(10)
-            make.top.equalTo(trackNameLabel.snp.bottom).offset(10)
+            make.top.equalTo(trackNameLabel.snp.bottom).offset(5)
         }
     }
     
