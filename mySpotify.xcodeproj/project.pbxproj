@@ -48,7 +48,7 @@
 		FABDE08729509E5D003A09D9 /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08629509E5D003A09D9 /* NewReleasesCellViewModel.swift */; };
 		FABDE0892950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE0882950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift */; };
 		FABDE08B2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08A2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift */; };
-		FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */; };
+		FABDE08D2951FCD7003A09D9 /* NewReleasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08C2951FCD7003A09D9 /* NewReleasesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,7 +97,7 @@
 		FABDE08629509E5D003A09D9 /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		FABDE0882950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCellViewModel.swift; sourceTree = "<group>"; };
 		FABDE08A2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCellViewModel.swift; sourceTree = "<group>"; };
-		FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		FABDE08C2951FCD7003A09D9 /* NewReleasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,7 +253,7 @@
 				FA58FEAC29423181006683B3 /* PlayerViewController.swift */,
 				FA58FEAE2942318F006683B3 /* PlaylistViewController.swift */,
 				FA58FEB0294231B4006683B3 /* SearchResultsViewController.swift */,
-				FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */,
+				FABDE08C2951FCD7003A09D9 /* NewReleasesViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 				FA58FEB929423240006683B3 /* Playlist.swift in Sources */,
 				FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */,
 				FA58FEB3294231F3006683B3 /* AuthManager.swift in Sources */,
-				FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */,
+				FABDE08D2951FCD7003A09D9 /* NewReleasesViewController.swift in Sources */,
 				FA525ED92954842900FAC660 /* PlaylistDetailsResponse.swift in Sources */,
 				FA525EDF295721A300FAC660 /* TitleHeaderCollectionReusableView.swift in Sources */,
 				FA525EDD2955DBD700FAC660 /* PlaylistHeaderViewViewModel.swift in Sources */,
