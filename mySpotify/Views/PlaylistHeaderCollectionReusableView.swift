@@ -20,6 +20,7 @@ final class PlaylistHeaderCollectionReusableView: UICollectionReusableView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.numberOfLines = 0
         
         return label
     }()
@@ -85,7 +86,7 @@ final class PlaylistHeaderCollectionReusableView: UICollectionReusableView {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(15)
-            make.left.equalToSuperview().offset(10)
+            make.leading.trailing.equalToSuperview().offset(10)
         }
         
         descriptionLabel.snp.makeConstraints { make in

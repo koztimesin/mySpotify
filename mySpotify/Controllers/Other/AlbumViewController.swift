@@ -1,5 +1,5 @@
 //
-//  NewReleasesViewController.swift
+//  AlbumViewController.swift
 //  mySpotify
 //
 //  Created by koztimesin on 20.12.2022.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-class NewReleasesViewController: UIViewController {
-    private var viewModels = [RecommendedTracksCellViewModel]()
+class AlbumViewController: UIViewController {
+    private var viewModels = [AlbumTracksCellViewModel]()
     
     private let album: Album
     
@@ -49,14 +49,16 @@ class NewReleasesViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         collectionView.register(
             PlaylistHeaderCollectionReusableView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: PlaylistHeaderCollectionReusableView.identifier
         )
+        
         collectionView.register(
-            RecommendedTracksCollectionViewCell.self,
-            forCellWithReuseIdentifier: RecommendedTracksCollectionViewCell.identifier
+            AlbumTracksCollectionViewCell.self,
+            forCellWithReuseIdentifier: AlbumTracksCollectionViewCell.identifier
         )
         
         APICaller.shared.getAlbumDetails(for: album) { [weak self] result in
@@ -64,10 +66,9 @@ class NewReleasesViewController: UIViewController {
                 switch result {
                 case .success(let model):
                     self?.viewModels = model.tracks.items.compactMap({
-                        RecommendedTracksCellViewModel(
+                        AlbumTracksCellViewModel(
                             name: $0.name,
-                            artistName: $0.artists.first?.name ?? "-",
-                            artworkURL: URL(string: $0.album?.images.first?.url ?? "")
+                            artistName: $0.artists.first?.name ?? "-"
                         )
                     })
                     self?.collectionView.reloadData()
@@ -87,7 +88,7 @@ class NewReleasesViewController: UIViewController {
     
 }
 
-extension NewReleasesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
@@ -99,7 +100,7 @@ extension NewReleasesViewController: UICollectionViewDelegate, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTracksCollectionViewCell.identifier, for: indexPath) as? RecommendedTracksCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumTracksCollectionViewCell.identifier, for: indexPath) as? AlbumTracksCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -121,7 +122,7 @@ extension NewReleasesViewController: UICollectionViewDelegate, UICollectionViewD
         let headerViewModel = PlaylistHeaderViewViewModel(
             name: album.name,
             ownerName: album.artists.first?.name,
-            description: "Release Date: \(album.release_date)",
+            description: "Release Date: \(String.formattedDate(string: album.release_date))",
             artworkURL: URL(string: album.images.first?.url ?? "")
         )
         header.configure(with: headerViewModel)
@@ -138,7 +139,7 @@ extension NewReleasesViewController: UICollectionViewDelegate, UICollectionViewD
     
 }
 
-extension NewReleasesViewController: PlaylistHeaderCollectionReusableViewDelegate {
+extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
         // Start playlist in a queue

@@ -360,7 +360,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case .newReleases:
             let album = newReleases[indexPath.row]
-            let vc = NewReleasesViewController(album: album)
+            let vc = AlbumViewController(album: album)
             vc.title = album.name
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
