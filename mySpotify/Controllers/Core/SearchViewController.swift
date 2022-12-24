@@ -28,15 +28,27 @@ class SearchViewController: UIViewController {
                 )
             )
             
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = NSDirectionalEdgeInsets(
+                top: 2,
+                leading: 7,
+                bottom: 2,
+                trailing: 7
+            )
             
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .absolute(180)
+                    heightDimension: .absolute(150)
                 ),
                 subitem: item,
                 count: 2
+            )
+            
+            group.contentInsets = NSDirectionalEdgeInsets(
+                top: 10,
+                leading: 0,
+                bottom: 10,
+                trailing: 0
             )
             
             return NSCollectionLayoutSection(group: group)
@@ -45,7 +57,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
@@ -54,14 +66,14 @@ class SearchViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
     }
-
+    
 }
 
 extension SearchViewController: UISearchResultsUpdating {
@@ -69,14 +81,14 @@ extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let resultsController = searchController.searchResultsController as? SearchResultsViewController,
               let query = searchController.searchBar.text,
-        !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+              !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
         
-//        resultsController.update(with: results)
+        //        resultsController.update(with: results)
         print(query)
         // Perform Search
-//        APICaller.shared.search
+        //        APICaller.shared.search
     }
     
 }
@@ -93,8 +105,10 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemGreen
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: "Rock")
         
         return cell
     }
