@@ -19,6 +19,7 @@
 		FA525EE92957895F00FAC660 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EE82957895E00FAC660 /* CategoryCollectionViewCell.swift */; };
 		FA525EEB295B443E00FAC660 /* AllCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EEA295B443E00FAC660 /* AllCategoriesResponse.swift */; };
 		FA525EED295B4F0B00FAC660 /* CategoryCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EEC295B4F0B00FAC660 /* CategoryCollectionViewCellViewModel.swift */; };
+		FA525EEF295B51E900FAC660 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EEE295B51E900FAC660 /* CategoryViewController.swift */; };
 		FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8129422826006683B3 /* AppDelegate.swift */; };
 		FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8329422826006683B3 /* SceneDelegate.swift */; };
 		FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8529422826006683B3 /* HomeViewController.swift */; };
@@ -72,6 +73,7 @@
 		FA525EE82957895E00FAC660 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA525EEA295B443E00FAC660 /* AllCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesResponse.swift; sourceTree = "<group>"; };
 		FA525EEC295B4F0B00FAC660 /* CategoryCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		FA525EEE295B51E900FAC660 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		FA58FE7E29422826006683B3 /* mySpotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySpotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58FE8129422826006683B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA58FE8329422826006683B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				FA58FEAE2942318F006683B3 /* PlaylistViewController.swift */,
 				FA58FEB0294231B4006683B3 /* SearchResultsViewController.swift */,
 				FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */,
+				FA525EEE295B51E900FAC660 /* CategoryViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				FA58FEB3294231F3006683B3 /* AuthManager.swift in Sources */,
 				FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */,
 				FA525ED92954842900FAC660 /* PlaylistDetailsResponse.swift in Sources */,
+				FA525EEF295B51E900FAC660 /* CategoryViewController.swift in Sources */,
 				FA525EEB295B443E00FAC660 /* AllCategoriesResponse.swift in Sources */,
 				FA525EDF295721A300FAC660 /* TitleHeaderCollectionReusableView.swift in Sources */,
 				FA525EDD2955DBD700FAC660 /* PlaylistHeaderViewViewModel.swift in Sources */,
