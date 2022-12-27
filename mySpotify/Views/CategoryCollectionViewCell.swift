@@ -1,13 +1,14 @@
 //
-//  GenreCollectionViewCell.swift
+//  CategoryCollectionViewCell.swift
 //  mySpotify
 //
 //  Created by koztimesin on 24.12.2022.
 //
 
 import UIKit
+import SDWebImage
 
-class GenreCollectionViewCell: UICollectionViewCell {
+class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier = "GenreCollectionViewCell"
     
     private lazy var imageView: UIImageView = {
@@ -65,6 +66,13 @@ class GenreCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         label.text = nil
+        imageView.image = UIImage(
+            systemName: "music.quarternote.3",
+            withConfiguration: UIImage.SymbolConfiguration(
+                pointSize: 50,
+                weight: .regular
+            )
+        )
     }
     
     override func layoutSubviews() {
@@ -78,11 +86,13 @@ class GenreCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(10)
             make.top.equalToSuperview().offset(10)
+            make.size.equalToSuperview().dividedBy(2)
         }
     }
     
-    func configure(with title: String) {
-        label.text = title
+    func configure(with viewModel: CategoryCollectionViewCellViewModel) {
+        label.text = viewModel.title
+        imageView.sd_setImage(with: viewModel.artworkURL, completed: nil)
         contentView.backgroundColor = colors.randomElement()
     }
     
