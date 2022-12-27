@@ -67,6 +67,16 @@ class SearchViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         
         collectionView.register(GenreCollectionViewCell.self, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+        
+        APICaller.shared.getCategories { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model): break
+                case .failure(let error): break
+                }
+                
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
