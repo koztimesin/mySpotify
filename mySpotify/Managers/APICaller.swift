@@ -166,7 +166,6 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(AllCategoriesResponse.self, from: data)
-                    print(result.categories.items)
                     completion(.success(result.categories.items))
                 } catch {
                     completion(.failure(error))
@@ -176,24 +175,25 @@ final class APICaller {
         }
     }
     
-//    public func getCategoryPlaylists(completion: @escaping (Result<[Playlist], Error>) -> Void) {
-//        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories/category_id/playlists"), type: .GET) { request in
-//            let task = URLSession.shared.dataTask(with: request) { data, _, error in
-//                guard let data = data, error == nil else {
-//                    completion(.failure(APIError.failedToGetData))
-//                    return
-//                }
-//                
-//                do {
-//                    let json = try JSONSerialization.jsonObject(with: data)
-//                    print(json)
-//                } catch {
-//                    completion(.failure(error))
-//                }
-//            }
-//            task.resume()
-//        }
-//    }
+    public func getCategoryPlaylists(category: Category, completion: @escaping (Result<[Playlist], Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseAPIURL + "/browse/categories/\(category.id)/playlists"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(CategoryPlaylistsResponse.self, from: data)
+                    let playlists = result.playlists.items
+                    completion(.success(playlists))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
     
     enum HTTPMethod: String {
         case GET
