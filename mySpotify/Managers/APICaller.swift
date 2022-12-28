@@ -11,13 +11,29 @@ private enum Constants {
     static let baseAPIURL = "https://api.spotify.com/v1"
 }
 
+private enum HTTPMethod: String {
+    case GET
+    case POST
+}
+
+private enum APIError: Error {
+    case failedToGetData
+}
+
 final class APICaller {
     static let shared = APICaller()
     
     private init() {}
     
-    enum APIError: Error {
-        case failedToGetData
+    private func createRequest(with url: URL?, type: HTTPMethod, completion: @escaping (URLRequest) -> Void) {
+        AuthManager.shared.withValidToken { token in
+            guard let url = url else { return }
+            var request = URLRequest(url: url)
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.httpMethod = type.rawValue
+            request.timeoutInterval = 30
+            completion(request)
+        }
     }
     
     public func getAlbumDetails(for album: Album, completion: @escaping (Result<AlbumDetailsResponse, Error>) -> Void) {
@@ -195,19 +211,30 @@ final class APICaller {
         }
     }
     
-    enum HTTPMethod: String {
-        case GET
-        case POST
-    }
-    
-    private func createRequest(with url: URL?, type: HTTPMethod, completion: @escaping (URLRequest) -> Void) {
-        AuthManager.shared.withValidToken { token in
-            guard let url = url else { return }
-            var request = URLRequest(url: url)
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            request.httpMethod = type.rawValue
-            request.timeoutInterval = 30
-            completion(request)
+    public func search(with query: String, completion: @escaping (Result<[SearchResult], Error>) -> Void) {
+        createRequest(with: URL(string: Constants.baseAPIURL + "/search?type=album,artist,playlist,track&q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(SearchResultsResponse.self, from: data)
+                    
+                    var searchResults =  [SearchResult]()
+                    searchResults.append(contentsOf: result.tracks.items.compactMap({ .track(model: $0) }))
+                    searchResults.append(contentsOf: result.albums.items.compactMap({ .album(model: $0) }))
+                    searchResults.append(contentsOf: result.artists.items.compactMap({ .artist(model: $0) }))
+                    searchResults.append(contentsOf: result.playlists.items.compactMap({ .playlist(model: $0) }))
+                    
+                    completion(.success(searchResults))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
         }
     }
+    
 }
