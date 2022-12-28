@@ -94,7 +94,6 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
-        <#code#>
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
