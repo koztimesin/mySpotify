@@ -12,7 +12,13 @@ private struct SearchSection {
     let results: [SearchResult]
 }
 
+protocol SearchResultsViewControllerDelegate: AnyObject {
+    func didTapResult(_ result: SearchResult)
+}
+
 class SearchResultsViewController: UIViewController {
+    
+    weak var delegate: SearchResultsViewControllerDelegate?
     
     private var sections = [SearchSection]()
     
@@ -114,6 +120,12 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         sections[section].title
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let result = sections[indexPath.section].results[indexPath.row]
+        
+        delegate?.didTapResult(result)
     }
     
 }
