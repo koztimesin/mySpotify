@@ -22,6 +22,8 @@
 		FA525EEF295B51E900FAC660 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EEE295B51E900FAC660 /* CategoryViewController.swift */; };
 		FA525EF1295C846000FAC660 /* SearchResultsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EF0295C846000FAC660 /* SearchResultsResponse.swift */; };
 		FA525EF3295C869E00FAC660 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EF2295C869E00FAC660 /* SearchResult.swift */; };
+		FA525EF6295DB7E100FAC660 /* SearchResultDefaultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EF5295DB7E100FAC660 /* SearchResultDefaultTableViewCell.swift */; };
+		FA525EF8295DB9F500FAC660 /* SearchResultDefaultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA525EF7295DB9F500FAC660 /* SearchResultDefaultTableViewCellViewModel.swift */; };
 		FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8129422826006683B3 /* AppDelegate.swift */; };
 		FA58FE8429422826006683B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8329422826006683B3 /* SceneDelegate.swift */; };
 		FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58FE8529422826006683B3 /* HomeViewController.swift */; };
@@ -58,6 +60,8 @@
 		FABDE0892950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE0882950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift */; };
 		FABDE08B2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08A2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift */; };
 		FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */; };
+		FAEE0F382967660B00699788 /* SearchResultSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F372967660B00699788 /* SearchResultSubtitleTableViewCell.swift */; };
+		FAEE0F3A2967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F392967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,8 @@
 		FA525EEE295B51E900FAC660 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		FA525EF0295C846000FAC660 /* SearchResultsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsResponse.swift; sourceTree = "<group>"; };
 		FA525EF2295C869E00FAC660 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		FA525EF5295DB7E100FAC660 /* SearchResultDefaultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDefaultTableViewCell.swift; sourceTree = "<group>"; };
+		FA525EF7295DB9F500FAC660 /* SearchResultDefaultTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDefaultTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FA58FE7E29422826006683B3 /* mySpotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySpotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58FE8129422826006683B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA58FE8329422826006683B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		FABDE0882950F45E003A09D9 /* FeaturedPlaylistsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCellViewModel.swift; sourceTree = "<group>"; };
 		FABDE08A2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCellViewModel.swift; sourceTree = "<group>"; };
 		FABDE08C2951FCD7003A09D9 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		FAEE0F372967660B00699788 /* SearchResultSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		FAEE0F392967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,15 @@
 				959466891A4326EF33D52B15 /* Pods_mySpotify.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA525EF4295DB79A00FAC660 /* SearchResultCells */ = {
+			isa = PBXGroup;
+			children = (
+				FA525EF5295DB7E100FAC660 /* SearchResultDefaultTableViewCell.swift */,
+				FAEE0F372967660B00699788 /* SearchResultSubtitleTableViewCell.swift */,
+			);
+			path = SearchResultCells;
 			sourceTree = "<group>";
 		};
 		FA58FE7529422826006683B3 = {
@@ -191,6 +208,7 @@
 		FA58FE9629422A45006683B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA525EF4295DB79A00FAC660 /* SearchResultCells */,
 				FABDE06C294F682C003A09D9 /* Browse */,
 				FA58FE8C2942282B006683B3 /* LaunchScreen.storyboard */,
 				FA525EDA2955D84B00FAC660 /* PlaylistHeaderCollectionReusableView.swift */,
@@ -244,6 +262,8 @@
 				FA525EDC2955DBD700FAC660 /* PlaylistHeaderViewViewModel.swift */,
 				FA525EE4295741B700FAC660 /* AlbumTracksCellViewModel.swift */,
 				FA525EEC295B4F0B00FAC660 /* CategoryCollectionViewCellViewModel.swift */,
+				FA525EF7295DB9F500FAC660 /* SearchResultDefaultTableViewCellViewModel.swift */,
+				FAEE0F392967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -424,19 +444,23 @@
 				FA58FEB1294231B4006683B3 /* SearchResultsViewController.swift in Sources */,
 				FABDE045294376D0003A09D9 /* AuthResponse.swift in Sources */,
 				FA58FEA72942313E006683B3 /* WelcomeViewController.swift in Sources */,
+				FAEE0F3A2967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift in Sources */,
 				FA525EE72957425800FAC660 /* Extensions.swift in Sources */,
 				FA525EDB2955D84B00FAC660 /* PlaylistHeaderCollectionReusableView.swift in Sources */,
 				FA58FEAB2942315F006683B3 /* ProfileViewController.swift in Sources */,
+				FA525EF6295DB7E100FAC660 /* SearchResultDefaultTableViewCell.swift in Sources */,
 				FABDE08729509E5D003A09D9 /* NewReleasesCellViewModel.swift in Sources */,
 				FA58FEBF2942329E006683B3 /* AudioTrack.swift in Sources */,
 				FA525EE92957895F00FAC660 /* CategoryCollectionViewCell.swift in Sources */,
 				FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */,
 				FA58FEB72942321B006683B3 /* HapticsManager.swift in Sources */,
+				FAEE0F382967660B00699788 /* SearchResultSubtitleTableViewCell.swift in Sources */,
 				FABDE08B2950F4E7003A09D9 /* RecommendedTracksCellViewModel.swift in Sources */,
 				FA58FE9C29422EA4006683B3 /* TabBarController.swift in Sources */,
 				FABDE070294F68B0003A09D9 /* FeaturedPlaylistsCollectionViewCell.swift in Sources */,
 				FA58FEA4294230FC006683B3 /* AuthViewController.swift in Sources */,
 				FA525ED329520AAB00FAC660 /* AlbumDetailsResponse.swift in Sources */,
+				FA525EF8295DB9F500FAC660 /* SearchResultDefaultTableViewCellViewModel.swift in Sources */,
 				FABDE069294DFAB2003A09D9 /* RecommendedGenresResponse.swift in Sources */,
 				FA525EF1295C846000FAC660 /* SearchResultsResponse.swift in Sources */,
 				FA58FE8229422826006683B3 /* AppDelegate.swift in Sources */,
@@ -596,6 +620,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mySpotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -627,6 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = mySpotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
