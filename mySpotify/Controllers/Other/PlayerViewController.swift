@@ -25,21 +25,31 @@ class PlayerViewController: UIViewController {
         return label
     }()
     
+    private lazy var controlsView = PlayerControlsView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         view.addSubview(imageView)
+        view.addSubview(controlsView)
         configureBarButtons()
+        
+        controlsView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         imageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(100)
-            make.centerX.equalToSuperview()
-            make.size.equalTo(300)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.width.height.equalTo(view.snp.width)
+        }
+        
+        controlsView.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -54,6 +64,22 @@ class PlayerViewController: UIViewController {
     
     @objc private func didTapAction() {
         // Actions
+    }
+    
+}
+
+extension PlayerViewController: PlayerControlsViewDelegate {
+    
+    func PlayerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView) {
+        
+    }
+    
+    func PlayerControlsViewDidTapForwardButton(_ playerControlsView: PlayerControlsView) {
+        
+    }
+    
+    func PlayerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView) {
+        
     }
     
 }

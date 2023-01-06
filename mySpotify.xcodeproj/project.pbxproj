@@ -63,6 +63,7 @@
 		FAEE0F382967660B00699788 /* SearchResultSubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F372967660B00699788 /* SearchResultSubtitleTableViewCell.swift */; };
 		FAEE0F3A2967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F392967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift */; };
 		FAEE0F3D2967B95C00699788 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F3C2967B95C00699788 /* PlayerPresenter.swift */; };
+		FAEE0F3F2967D06B00699788 /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		FAEE0F372967660B00699788 /* SearchResultSubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		FAEE0F392967675800699788 /* SearchResultSubtitleTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSubtitleTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FAEE0F3C2967B95C00699788 /* PlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
+		FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				FA525EDE295721A200FAC660 /* TitleHeaderCollectionReusableView.swift */,
 				FA525EE229573F5C00FAC660 /* AlbumTracksCollectionViewCell.swift */,
 				FA525EE82957895E00FAC660 /* CategoryCollectionViewCell.swift */,
+				FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				FABDE08729509E5D003A09D9 /* NewReleasesCellViewModel.swift in Sources */,
 				FA58FEBF2942329E006683B3 /* AudioTrack.swift in Sources */,
 				FA525EE92957895F00FAC660 /* CategoryCollectionViewCell.swift in Sources */,
+				FAEE0F3F2967D06B00699788 /* PlayerControlsView.swift in Sources */,
 				FA58FE8629422826006683B3 /* HomeViewController.swift in Sources */,
 				FA58FEB72942321B006683B3 /* HapticsManager.swift in Sources */,
 				FAEE0F382967660B00699788 /* SearchResultSubtitleTableViewCell.swift in Sources */,
