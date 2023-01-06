@@ -9,9 +9,17 @@ import UIKit
 import SnapKit
 import SDWebImage
 
+protocol PlayerViewControllerDelegate: AnyObject {
+    func didTapPlayPause()
+    func didTapForward()
+    func didTapBackward()
+    func didSlideSlider(_ volume: Float)
+}
+
 class PlayerViewController: UIViewController {
     
     weak var dataSource: PlayerDataSource?
+    weak var delegate: PlayerViewControllerDelegate?
     
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -78,16 +86,20 @@ class PlayerViewController: UIViewController {
 
 extension PlayerViewController: PlayerControlsViewDelegate {
     
-    func PlayerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView) {
-        
+    func playerControlsView(_ playerControlsView: PlayerControlsView, didSliderSlide volume: Float) {
+        delegate?.didSlideSlider(volume)
     }
     
-    func PlayerControlsViewDidTapForwardButton(_ playerControlsView: PlayerControlsView) {
-        
+    func playerControlsViewDidTapPlayPauseButton(_ playerControlsView: PlayerControlsView) {
+        delegate?.didTapPlayPause()
     }
     
-    func PlayerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView) {
-        
+    func playerControlsViewDidTapForwardButton(_ playerControlsView: PlayerControlsView) {
+        delegate?.didTapForward()
+    }
+    
+    func playerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView) {
+        delegate?.didTapBackward()
     }
     
 }

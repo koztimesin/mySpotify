@@ -42,6 +42,7 @@ final class PlayerPresenter {
         
         let vc = PlayerViewController()
         vc.dataSource = self
+        vc.delegate = self
         vc.title = track.name
         
         self.track = track
@@ -74,6 +75,43 @@ extension PlayerPresenter: PlayerDataSource {
     
     var imageURL: URL? {
         URL(string: currentTrack?.album?.images.first?.url ?? "")
+    }
+    
+}
+
+extension PlayerPresenter: PlayerViewControllerDelegate {
+    
+    func didSlideSlider(_ volume: Float) {
+        player?.volume = volume
+    }
+    
+    
+    func didTapPlayPause() {
+        if let player = player {
+            if player.timeControlStatus == .playing {
+                player.pause()
+            } else if player.timeControlStatus == .paused {
+                player.play()
+            }
+        }
+    }
+    
+    func didTapForward() {
+        if tracks.isEmpty {
+            player?.pause()
+            player?.play()
+        } else {
+            
+        }
+    }
+    
+    func didTapBackward() {
+        if tracks.isEmpty {
+            player?.pause()
+            player?.play()
+        } else {
+            
+        }
     }
     
 }
