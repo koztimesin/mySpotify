@@ -13,6 +13,11 @@ protocol PlayerControlsViewDelegate: AnyObject {
     func PlayerControlsViewDidTapBackwardButton(_ playerControlsView: PlayerControlsView)
 }
 
+struct PlayerControlsViewViewModel {
+    let title: String?
+    let subtitle: String?
+}
+
 final class PlayerControlsView: UIView {
     
     weak var delegate: PlayerControlsViewDelegate?
@@ -28,7 +33,6 @@ final class PlayerControlsView: UIView {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 20, weight: .semibold)
-        label.text = "Kill This Love"
         
         return label
     }()
@@ -38,7 +42,6 @@ final class PlayerControlsView: UIView {
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.textColor = .secondaryLabel
-        label.text = "BLACKPINK"
         
         return label
     }()
@@ -163,5 +166,10 @@ final class PlayerControlsView: UIView {
     
     @objc private func didTapNext() {
         delegate?.PlayerControlsViewDidTapForwardButton(self)
+    }
+    
+    func configure(with viewModel: PlayerControlsViewViewModel) {
+        nameLabel.text = viewModel.title
+        subtitleLabel.text = viewModel.subtitle
     }
 }
