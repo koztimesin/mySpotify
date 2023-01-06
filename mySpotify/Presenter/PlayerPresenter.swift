@@ -11,13 +11,14 @@ final class PlayerPresenter {
     
     static func startPlayer(from viewController: UIViewController, track: AudioTrack) {
         let vc = PlayerViewController()
+        vc.title = track.name
         
-        viewController.present(vc, animated: true)
+        viewController.present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     static func startPlayer(from viewController: UIViewController, album: [AudioTrack]) {
         let vc = PlayerViewController()
         
-        viewController.present(vc, animated: true)
+        viewController.present(UINavigationController(rootViewController: vc), animated: true)
     }
 }
