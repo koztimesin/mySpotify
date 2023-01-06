@@ -7,22 +7,17 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class PlayerViewController: UIViewController {
     
-    //    private lazy var imageView: UIImageView = {
-    //        let image = UIImageView()
-    //        image.contentMode = .scaleAspectFill
-    //        image.backgroundColor = .systemPink
-    //
-    //        return image
-    //    }()
+    weak var dataSource: PlayerDataSource?
     
-    private lazy var imageView: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .systemPink
+    private lazy var imageView: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
         
-        return label
+        return image
     }()
     
     private lazy var controlsView = PlayerControlsView()
@@ -36,6 +31,8 @@ class PlayerViewController: UIViewController {
         configureBarButtons()
         
         controlsView.delegate = self
+        
+        configure()
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,6 +61,10 @@ class PlayerViewController: UIViewController {
     
     @objc private func didTapAction() {
         // Actions
+    }
+    
+    private func configure() {
+        imageView.sd_setImage(with: dataSource?.imageURL)
     }
     
 }

@@ -374,7 +374,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
         case .recommendedTracks:
             let track = recommendedTracks[indexPath.row]
-            PlayerPresenter.startPlayer(from: self, track: track)
+            PlayerPresenter.shared.startPlayer(from: self, track: track)
             
         }
     }
