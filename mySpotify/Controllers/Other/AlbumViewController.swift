@@ -138,7 +138,8 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         // Play song
         let index = indexPath.row
-        let track = tracks[index]
+        var track = tracks[index]
+        track.album = self.album
         PlayerPresenter.shared.startPlayer(from: self, track: track)
     }
     
@@ -148,7 +149,13 @@ extension AlbumViewController: PlaylistHeaderCollectionReusableViewDelegate {
     
     func playlistHeaderCollectionReusableViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableView) {
         // Start playlist in a queue
-        PlayerPresenter.shared.startPlayer(from: self, tracks: tracks)
+        let tracksWithAlbum: [AudioTrack] = tracks.compactMap({
+            var track = $0
+            track.album = self.album
+            
+            return track
+        })
+        PlayerPresenter.shared.startPlayer(from: self, tracks: tracksWithAlbum)
     }
     
     
