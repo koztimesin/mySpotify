@@ -66,6 +66,7 @@
 		FAEE0F3F2967D06B00699788 /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */; };
 		FAEE0F42297195E400699788 /* LibraryPlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F41297195E400699788 /* LibraryPlaylistsViewController.swift */; };
 		FAEE0F442971961600699788 /* LibraryAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F432971961600699788 /* LibraryAlbumsViewController.swift */; };
+		FAEE0F4629735C1D00699788 /* LibraryToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
 		FAEE0F41297195E400699788 /* LibraryPlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistsViewController.swift; sourceTree = "<group>"; };
 		FAEE0F432971961600699788 /* LibraryAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsViewController.swift; sourceTree = "<group>"; };
+		FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryToggleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				FA525EE229573F5C00FAC660 /* AlbumTracksCollectionViewCell.swift */,
 				FA525EE82957895E00FAC660 /* CategoryCollectionViewCell.swift */,
 				FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */,
+				FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				FA58FE9E29422F31006683B3 /* SearchViewController.swift in Sources */,
 				FABDE067294DF305003A09D9 /* FeaturedPlaylistsResponse.swift in Sources */,
 				FA58FEB929423240006683B3 /* Playlist.swift in Sources */,
+				FAEE0F4629735C1D00699788 /* LibraryToggleView.swift in Sources */,
 				FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */,
 				FA58FEB3294231F3006683B3 /* AuthManager.swift in Sources */,
 				FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */,
