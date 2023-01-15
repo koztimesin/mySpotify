@@ -68,6 +68,7 @@
 		FAEE0F442971961600699788 /* LibraryAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F432971961600699788 /* LibraryAlbumsViewController.swift */; };
 		FAEE0F4629735C1D00699788 /* LibraryToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */; };
 		FAEE0F482973779200699788 /* LibraryPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F472973779200699788 /* LibraryPlaylistsResponse.swift */; };
+		FAEE0F4A2973798900699788 /* ActionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F492973798900699788 /* ActionLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		FAEE0F432971961600699788 /* LibraryAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsViewController.swift; sourceTree = "<group>"; };
 		FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryToggleView.swift; sourceTree = "<group>"; };
 		FAEE0F472973779200699788 /* LibraryPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistsResponse.swift; sourceTree = "<group>"; };
+		FAEE0F492973798900699788 /* ActionLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 				FA525EE82957895E00FAC660 /* CategoryCollectionViewCell.swift */,
 				FAEE0F3E2967D06B00699788 /* PlayerControlsView.swift */,
 				FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */,
+				FAEE0F492973798900699788 /* ActionLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				FABDE05D2947A9FD003A09D9 /* SettingsModel.swift in Sources */,
 				FA58FEB3294231F3006683B3 /* AuthManager.swift in Sources */,
 				FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */,
+				FAEE0F4A2973798900699788 /* ActionLabelView.swift in Sources */,
 				FA525ED92954842900FAC660 /* PlaylistDetailsResponse.swift in Sources */,
 				FA525EEF295B51E900FAC660 /* CategoryViewController.swift in Sources */,
 				FA525EEB295B443E00FAC660 /* AllCategoriesResponse.swift in Sources */,
