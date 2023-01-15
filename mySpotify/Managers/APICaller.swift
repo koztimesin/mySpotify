@@ -275,8 +275,12 @@ final class APICaller {
                         }
                         
                         do {
-                            let result = try JSONDecoder().decode(Playlist.self, from: data)
-                            print(result)
+                            let result = try JSONSerialization.jsonObject(with: data)
+                            if let response = result as? [String: Any], response["id"] as? String != nil {
+                                completion(true)
+                            } else {
+                                completion(false)
+                            }
                             completion(true)
                         } catch {
                             completion(false)
