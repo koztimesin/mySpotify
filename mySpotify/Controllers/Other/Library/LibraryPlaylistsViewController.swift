@@ -14,8 +14,11 @@ class LibraryPlaylistsViewController: UIViewController {
     private lazy var noPlaylistView = ActionLabelView()
     
     private lazy var tableView: UITableView = {
-        let table = UITableView()
-        table.register(SearchResultSubtitleTableViewCell.self, forCellReuseIdentifier: SearchResultSubtitleTableViewCell.identifier)
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(
+            SearchResultSubtitleTableViewCell.self,
+            forCellReuseIdentifier: SearchResultSubtitleTableViewCell.identifier
+        )
         table.isHidden = true
         
         return table
@@ -139,5 +142,8 @@ extension LibraryPlaylistsViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
     
 }

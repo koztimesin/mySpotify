@@ -98,7 +98,7 @@ class SearchResultSubtitleTableViewCell: UITableViewCell {
     func configure(with model: SearchResultSubtitleTableViewCellViewModel) {
         label.text = model.title
         subtitleLabel.text = model.subtitle
-        iconImageView.sd_setImage(with: model.imageURL, completed: nil)
+        iconImageView.sd_setImage(with: model.imageURL, placeholderImage: UIImage(systemName: "photo") ,completed: nil)
     }
     
 }
