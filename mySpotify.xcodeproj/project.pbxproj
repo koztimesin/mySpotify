@@ -69,6 +69,7 @@
 		FAEE0F4629735C1D00699788 /* LibraryToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */; };
 		FAEE0F482973779200699788 /* LibraryPlaylistsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F472973779200699788 /* LibraryPlaylistsResponse.swift */; };
 		FAEE0F4A2973798900699788 /* ActionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F492973798900699788 /* ActionLabelView.swift */; };
+		FAEE0F4C2974921100699788 /* LibraryAlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE0F4B2974921000699788 /* LibraryAlbumsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		FAEE0F4529735C1C00699788 /* LibraryToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryToggleView.swift; sourceTree = "<group>"; };
 		FAEE0F472973779200699788 /* LibraryPlaylistsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylistsResponse.swift; sourceTree = "<group>"; };
 		FAEE0F492973798900699788 /* ActionLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLabelView.swift; sourceTree = "<group>"; };
+		FAEE0F4B2974921000699788 /* LibraryAlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbumsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 				FA525EF0295C846000FAC660 /* SearchResultsResponse.swift */,
 				FA525EF2295C869E00FAC660 /* SearchResult.swift */,
 				FAEE0F472973779200699788 /* LibraryPlaylistsResponse.swift */,
+				FAEE0F4B2974921000699788 /* LibraryAlbumsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				FABDE08D2951FCD7003A09D9 /* AlbumViewController.swift in Sources */,
 				FAEE0F4A2973798900699788 /* ActionLabelView.swift in Sources */,
 				FA525ED92954842900FAC660 /* PlaylistDetailsResponse.swift in Sources */,
+				FAEE0F4C2974921100699788 /* LibraryAlbumsResponse.swift in Sources */,
 				FA525EEF295B51E900FAC660 /* CategoryViewController.swift in Sources */,
 				FA525EEB295B443E00FAC660 /* AllCategoriesResponse.swift in Sources */,
 				FA525EDF295721A300FAC660 /* TitleHeaderCollectionReusableView.swift in Sources */,
