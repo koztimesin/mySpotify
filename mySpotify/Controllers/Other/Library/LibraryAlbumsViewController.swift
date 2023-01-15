@@ -135,6 +135,7 @@ extension LibraryAlbumsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HapticsManager.shared.vibrateForSelection()
         tableView.deselectRow(at: indexPath, animated: true)
         let album = albums[indexPath.row]
         
