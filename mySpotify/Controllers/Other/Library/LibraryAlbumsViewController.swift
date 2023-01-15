@@ -13,6 +13,8 @@ class LibraryAlbumsViewController: UIViewController {
     
     private lazy var noAlbumsView = ActionLabelView()
     
+    private var observer: NSObjectProtocol?
+    
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(
@@ -37,6 +39,14 @@ class LibraryAlbumsViewController: UIViewController {
         setUpNoAlbumsView()
         
         fetchData()
+        
+        observer = NotificationCenter.default.addObserver(
+            forName: .albumSavedNotification,
+            object: nil,
+            queue: .main,
+            using: { [weak self] _ in
+                self?.fetchData()
+            })
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,6 +65,7 @@ class LibraryAlbumsViewController: UIViewController {
     }
     
     private func fetchData() {
+        albums.removeAll()
         APICaller.shared.getCurrentUserAlbums { [weak self] result in
             DispatchQueue.main.async {
                 switch result {

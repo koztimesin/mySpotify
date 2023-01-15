@@ -106,7 +106,9 @@ class AlbumViewController: UIViewController {
                 return
             }
             APICaller.shared.saveAlbum(album: self.album) { success in
-                print("Saved \(success)")
+                if success {
+                    NotificationCenter.default.post(name: .albumSavedNotification, object: nil)
+                }
             }
         }))
         
