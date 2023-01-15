@@ -297,8 +297,10 @@ final class APICaller {
     public func addTrackToPlaylist(track: AudioTrack, playlist: Playlist, completion: @escaping (Bool) -> Void) {
         createRequest(with: URL(string: Constants.baseAPIURL + "/playlists/\(playlist.id)/tracks"), type: .POST) { baseRequest in
             var request = baseRequest
-            var json = [
-                "uris": "spotify:track:\(track.id)"
+            let json = [
+                "uris": [
+                    "spotify:track:\(track.id)"
+                ]
             ]
             request.httpBody = try? JSONSerialization.data(withJSONObject: json)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -312,6 +314,8 @@ final class APICaller {
                     let result = try JSONSerialization.jsonObject(with: data)
                     if let response = result as? [String: Any], response["snapshot_id"] as? String != nil {
                         completion(true)
+                    } else {
+                        completion(false)
                     }
                 } catch {
                     completion(false)

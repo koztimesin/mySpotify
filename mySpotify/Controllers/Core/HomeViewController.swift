@@ -87,7 +87,9 @@ class HomeViewController: UIViewController {
             DispatchQueue.main.async {
                 let vc = LibraryPlaylistsViewController()
                 vc.selectionHandler = { playlist in
-                    
+                    APICaller.shared.addTrackToPlaylist(track: model, playlist: playlist) { success in
+                        print("Successfully added to playlist: \(success)")
+                    }
                 }
                 vc.title = "Select Playlist"
                 self?.present(UINavigationController(rootViewController: vc), animated: true)
