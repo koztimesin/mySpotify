@@ -104,9 +104,9 @@ class LibraryPlaylistsViewController: UIViewController {
                 return
             }
             
-            APICaller.shared.createPlaylist(with: text) { success in
+            APICaller.shared.createPlaylist(with: text) { [weak self] success in
                 if success {
-                    // refresh playlist list
+                    self?.fetchData()
                 } else {
                     print("Failed to create playlist ")
                 }
@@ -164,6 +164,7 @@ extension LibraryPlaylistsViewController: UITableViewDelegate, UITableViewDataSo
         
         let vc = PlaylistViewController(playlist: playlist)
         vc.navigationItem.largeTitleDisplayMode = .never
+        vc.isOwner = true
         navigationController?.pushViewController(vc, animated: true)
     }
     
