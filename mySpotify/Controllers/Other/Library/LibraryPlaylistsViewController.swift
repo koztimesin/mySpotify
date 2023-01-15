@@ -13,6 +13,8 @@ class LibraryPlaylistsViewController: UIViewController {
     
     private lazy var noPlaylistView = ActionLabelView()
     
+    public var selectionHandler: ((Playlist) -> Void)?
+    
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(
@@ -37,6 +39,10 @@ class LibraryPlaylistsViewController: UIViewController {
         setUpNoPlaylistView()
         
         fetchData()
+        
+        if selectionHandler != nil  {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapClose))
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,6 +52,10 @@ class LibraryPlaylistsViewController: UIViewController {
         noPlaylistView.center = view.center
         
         tableView.frame = view.bounds
+    }
+    
+    @objc private func didTapClose() {
+        dismiss(animated: true)
     }
     
     private func fetchData() {
@@ -145,6 +155,13 @@ extension LibraryPlaylistsViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let playlist = playlists[indexPath.row]
+        
+        guard selectionHandler == nil else {
+            selectionHandler?(playlist)
+            dismiss(animated: true)
+            return
+        }
+        
         let vc = PlaylistViewController(playlist: playlist)
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
