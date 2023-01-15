@@ -260,7 +260,7 @@ final class APICaller {
         getCurrentUserProfile { [weak self] result in
             switch result {
             case .success(let profile):
-                let urlString = Constants.baseAPIURL + "/users/{\(profile.id)}/playlists"
+                let urlString = Constants.baseAPIURL + "/users/\(profile.id)/playlists"
                 
                 self?.createRequest(with: URL(string: urlString), type: .POST) { baseRequest in
                     var request = baseRequest
