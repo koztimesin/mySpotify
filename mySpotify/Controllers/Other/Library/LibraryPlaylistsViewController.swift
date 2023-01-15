@@ -62,12 +62,7 @@ class LibraryPlaylistsViewController: UIViewController {
         )
     }
     
-}
-
-extension LibraryPlaylistsViewController: ActionLabelViewDelegate {
-    
-    func actionLabelViewDidTapButton(_ action: ActionLabelView) {
-        //show creation UI
+    public func showCreatePlaylistAlert() {
         let alert = UIAlertController(title: "New Playlist", message: "Enter playlist name", preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "Playlist..."
@@ -90,6 +85,14 @@ extension LibraryPlaylistsViewController: ActionLabelViewDelegate {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(alert, animated: true)
+    }
+    
+}
+
+extension LibraryPlaylistsViewController: ActionLabelViewDelegate {
+    
+    func actionLabelViewDidTapButton(_ action: ActionLabelView) {
+        showCreatePlaylistAlert()
     }
     
 }

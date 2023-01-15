@@ -275,8 +275,9 @@ final class APICaller {
                         }
                         
                         do {
-                            let result = try JSONSerialization.jsonObject(with: data)
+                            let result = try JSONDecoder().decode(Playlist.self, from: data)
                             print(result)
+                            completion(true)
                         } catch {
                             completion(false)
                         }
