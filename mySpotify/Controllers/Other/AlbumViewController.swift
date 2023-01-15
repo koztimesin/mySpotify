@@ -13,7 +13,7 @@ class AlbumViewController: UIViewController {
     private let album: Album
     private var tracks = [AudioTrack]()
     
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { _, _ in
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewCompositionalLayout(sectionProvider: { _, _ in
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)))
         
         item.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 2, bottom: 1, trailing: 2)
@@ -46,6 +46,20 @@ class AlbumViewController: UIViewController {
         title = album.name
         view.backgroundColor = .systemBackground
         
+        configureCollectionView()
+        
+        fetchData()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapAction))
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        collectionView.frame = view.bounds
+    }
+    
+    private func configureCollectionView() {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
@@ -61,7 +75,9 @@ class AlbumViewController: UIViewController {
             AlbumTracksCollectionViewCell.self,
             forCellWithReuseIdentifier: AlbumTracksCollectionViewCell.identifier
         )
-        
+    }
+    
+    private func fetchData() {
         APICaller.shared.getAlbumDetails(for: album) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -82,10 +98,19 @@ class AlbumViewController: UIViewController {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    @objc private func didTapAction() {
+        let actionSheet = UIAlertController(title: album.name, message: "Actions", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: "Save Album", style: .default, handler: { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            APICaller.shared.saveAlbum(album: self.album) { success in
+                print("Saved \(success)")
+            }
+        }))
         
-        collectionView.frame = view.bounds
+        present(actionSheet, animated: true)
     }
     
 }
